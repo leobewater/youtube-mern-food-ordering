@@ -25,6 +25,7 @@ Video: https://www.youtube.com/watch?v=ardeKHEN1j4&t=3450s&ab_channel=ChrisBlake
 > npx shadcn-ui@latest add separator
 > npm i react-router-dom
 > npm i lucide-react
+> npm i @auth0/auth0-react
 ```
 
 # Frontend To Run

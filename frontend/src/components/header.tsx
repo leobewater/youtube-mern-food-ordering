@@ -1,5 +1,5 @@
-import { MobileNav } from "@/components/Mobile-Nav";
 import { MainNav } from "@/components/main-nav";
+import { MobileNav } from "@/components/mobile-nav";
 import { Link } from "react-router-dom";
 
 export const Header = () => {

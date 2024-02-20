@@ -6,6 +6,7 @@ Video: https://www.youtube.com/watch?v=ardeKHEN1j4&t=3450s&ab_channel=ChrisBlake
 > npm i express cors dotenv mongodb mongoose
 > npm i ts-node typescript nodemon @types/express @types/cors @types/node --save-dev
 > npx tsc --init
+> npm i express-oauth2-jwt-bearer
 ```
 
 # Backend To Run

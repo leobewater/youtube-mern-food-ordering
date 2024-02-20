@@ -1,6 +1,6 @@
 import { Layout } from "@/layouts/layout";
 import { AuthCallbackPage } from "@/pages/AuthCallbackPage";
-import { HomePage } from "@/pages/homepage";
+import { HomePage } from "@/pages/Homepage";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 const AppRoutes = () => {

@@ -4,7 +4,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-export const layout = ({ children }: Props) => {
+export const Layout = ({ children }: Props) => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />

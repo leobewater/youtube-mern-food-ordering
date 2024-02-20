@@ -1,7 +1,7 @@
-const { auth } = require('express-oauth2-jwt-bearer');
+const { auth } = require("express-oauth2-jwt-bearer");
 
-const jwtCheck = auth({
-  audience: 'youtube-mern-food-ordering-backend',
-  issuerBaseURL: 'https://dev-ktxltid3663phhz5.us.auth0.com/',
-  tokenSigningAlg: 'RS256'
+export const jwtCheck = auth({
+  audience: process.env.AUTH0_AUDIENCE,
+  issuerBaseURL: process.env.AUTH0_ISSUER_BASE_URL,
+  tokenSigningAlg: "RS256",
 });

@@ -12,3 +12,16 @@ Video: https://www.youtube.com/watch?v=ardeKHEN1j4&t=3450s&ab_channel=ChrisBlake
 ```bash
 > npm run dev
 ```
+
+# Frontend
+```bash
+> npm create vite@latest
+> npm install -D tailwindcss postcss autoprefixer
+> npx tailwindcss init -p
+
+```
+
+# Frontend To Run
+```bash
+> npm run dev
+```

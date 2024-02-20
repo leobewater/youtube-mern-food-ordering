@@ -19,6 +19,7 @@ Video: https://www.youtube.com/watch?v=ardeKHEN1j4&t=3450s&ab_channel=ChrisBlake
 > npm install -D tailwindcss postcss autoprefixer
 > npx tailwindcss init -p
 > npm i -D @types/node
+> npx shadcn-ui@latest init
 ```
 
 # Frontend To Run

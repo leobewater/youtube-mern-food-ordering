@@ -1,3 +1,4 @@
+import { MobileNav } from "@/components/Mobile-Nav";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
@@ -10,6 +11,9 @@ export const Header = () => {
         >
           MernEats.com
         </Link>
+        <div className="md:hidden">
+          <MobileNav />
+        </div>
       </div>
     </div>
   );

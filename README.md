@@ -20,6 +20,7 @@ Video: https://www.youtube.com/watch?v=ardeKHEN1j4&t=3450s&ab_channel=ChrisBlake
 > npx tailwindcss init -p
 > npm i -D @types/node
 > npx shadcn-ui@latest init
+> npx shadcn-ui@latest add button
 ```
 
 # Frontend To Run

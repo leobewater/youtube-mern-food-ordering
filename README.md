@@ -9,6 +9,7 @@ Video: https://www.youtube.com/watch?v=ardeKHEN1j4&t=3450s&ab_channel=ChrisBlake
 > npm i express-oauth2-jwt-bearer
 > npm i jsonwebtoken
 > npm i @types/jsonwebtoken --save-dev
+> npm i express-validator
 ```
 
 # Backend To Run

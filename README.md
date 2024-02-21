@@ -7,6 +7,8 @@ Video: https://www.youtube.com/watch?v=ardeKHEN1j4&t=3450s&ab_channel=ChrisBlake
 > npm i ts-node typescript nodemon @types/express @types/cors @types/node --save-dev
 > npx tsc --init
 > npm i express-oauth2-jwt-bearer
+> npm i jsonwebtoken
+> npm i @types/jsonwebtoken --save-dev
 ```
 
 # Backend To Run

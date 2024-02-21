@@ -7,7 +7,7 @@ type Props = {
   showHero?: boolean;
 };
 
-export const Layout = ({ children, showHero }: Props) => {
+export const Layout = ({ children, showHero = false }: Props) => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />

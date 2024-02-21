@@ -1,16 +1,17 @@
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
-import { Hero } from "@/components/hero";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
 
 type Props = {
   children: React.ReactNode;
+  showHero?: boolean;
 };
 
-export const Layout = ({ children }: Props) => {
+export const Layout = ({ children, showHero }: Props) => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <Hero />
+      {showHero && <Hero />}
       <div className="container mx-auto flex-1 py-10">{children}</div>
       <Footer />
     </div>

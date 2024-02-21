@@ -1,4 +1,4 @@
-import { MobileNavLink } from "@/components/mobile-nav-link";
+import { MobileNavLink } from "@/components/MobileNavLink";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {

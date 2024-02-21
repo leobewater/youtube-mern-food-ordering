@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import UsernameMenu from "@/components/username-menu";
+import UsernameMenu from "@/components/UsernameMenu";
 import { useAuth0 } from "@auth0/auth0-react";
 
 export const MainNav = () => {

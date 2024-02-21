@@ -10,6 +10,9 @@ Video: https://www.youtube.com/watch?v=ardeKHEN1j4&t=3450s&ab_channel=ChrisBlake
 > npm i jsonwebtoken
 > npm i @types/jsonwebtoken --save-dev
 > npm i express-validator
+> npm i cloudinary
+> npm i multer
+> npm i @types/multer
 ```
 
 # Backend To Run

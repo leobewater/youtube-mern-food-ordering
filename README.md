@@ -44,3 +44,11 @@ Video: https://www.youtube.com/watch?v=ardeKHEN1j4&t=3450s&ab_channel=ChrisBlake
 ```bash
 > npm run dev
 ```
+
+# Deploy to Render.com
+https://youtube-mern-food-ordering-backend.onrender.com/health
+https://youtube-mern-food-ordering-frontend.onrender.com
+```bash
+- Backend - add render.com IP to mongodb atlas
+- Frontend - add render.com domain name to Auth0 allowed callback URLs
+```

@@ -38,7 +38,6 @@ export const useGetMyUser = () => {
   return {
     currentUser,
     isLoading,
-    error,
   };
 };
 
@@ -131,8 +130,5 @@ export const useUpdateMyUser = () => {
   return {
     updateUser,
     isLoading,
-    isSuccess,
-    error,
-    reset,
   };
 };

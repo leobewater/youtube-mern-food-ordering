@@ -28,14 +28,15 @@ const formSchema = z.object({
 export type UserFormData = z.infer<typeof formSchema>;
 
 type Props = {
-  currentUser: User
+  currentUser: User;
   onSave: (userProfileData: UserFormData) => void;
   isLoading: boolean;
 };
 
-export const UserProfileForm = ({ onSave, isLoading }: Props) => {
+export const UserProfileForm = ({ onSave, isLoading, currentUser }: Props) => {
   const form = useForm<UserFormData>({
     resolver: zodResolver(formSchema),
+    defaultValues: currentUser,
   });
 
   return (

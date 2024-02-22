@@ -6,6 +6,7 @@ import { HomePage } from "@/pages/Homepage";
 import { ManageRestaurantPage } from "@/pages/ManageRestaurantPage";
 import SearchPage from "@/pages/SearchPage";
 import { UserProfilePage } from "@/pages/UserProfilePage";
+import { DetailPage } from "@/pages/DetailPage";
 
 const AppRoutes = () => {
   return (
@@ -27,7 +28,14 @@ const AppRoutes = () => {
           </Layout>
         }
       />
-
+      <Route
+        path="/detail/:restaurantId"
+        element={
+          <Layout showHero={false}>
+            <DetailPage />
+          </Layout>
+        }
+      />
       <Route element={<ProtectedRoute />}>
         <Route
           path="/user-profile"

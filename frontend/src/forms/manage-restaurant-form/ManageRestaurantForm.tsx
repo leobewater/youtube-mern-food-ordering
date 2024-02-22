@@ -55,7 +55,6 @@ export const ManageRestaurantForm = ({ onSave, isLoading }: Props) => {
         className="space-y-8 bg-gray-50 p-10 rounded-lg"
       >
         <DetailsSection />
-
       </form>
     </Form>
   );

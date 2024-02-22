@@ -1,7 +1,10 @@
+import { LoadingButton } from "@/components/LoadingButton";
+import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { Separator } from "@/components/ui/separator";
 import { CuisinesSection } from "@/forms/manage-restaurant-form/CuisinesSection";
 import { DetailsSection } from "@/forms/manage-restaurant-form/DetailsSection";
+import { ImageSection } from "@/forms/manage-restaurant-form/ImageSection";
 import { MenuSection } from "@/forms/manage-restaurant-form/MenuSection";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -62,6 +65,9 @@ export const ManageRestaurantForm = ({ onSave, isLoading }: Props) => {
         <CuisinesSection />
         <Separator />
         <MenuSection />
+        <Separator />
+        <ImageSection />
+        {isLoading ? <LoadingButton /> : <Button type="submit">Submit</Button>}
       </form>
     </Form>
   );

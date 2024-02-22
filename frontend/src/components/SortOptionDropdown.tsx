@@ -20,7 +20,7 @@ const SORT_OPTIONS = [
 export const SortOptionDropdown = ({ onChange, sortOption }: Props) => {
   const selectedSortLabel =
     SORT_OPTIONS.find((option) => option.value === sortOption)?.label ||
-    SORT_OPTION[0].label;
+    SORT_OPTIONS[0].label;
   
   return (
     <DropdownMenu>

@@ -1,5 +1,6 @@
 import { useSearchRestaurants } from "@/api/RestaurantApi";
 import { SearchBar } from "@/components/SearchBar";
+import { SearchResultCard } from "@/components/SearchResultCard";
 import { SearchResultInfo } from "@/components/SearchResultInfo";
 import { useParams } from "react-router-dom";
 
@@ -24,6 +25,9 @@ export default function SearchPage() {
           placeHolder="Search by Cuisine or Restaurant Name"
         />
         <SearchResultInfo total={results.pagination.total} city={city} />
+        {results?.data.map((restaurant) => (
+          <SearchResultCard key={restaurant._id} restaurant={restaurant} />
+        ))}
       </div>
     </div>
   );

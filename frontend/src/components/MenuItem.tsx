@@ -16,7 +16,7 @@ export const MenuItem = ({ menuItem }: Props) => {
       <CardHeader>
         <CardTitle className="">{menuItem.name}</CardTitle>
       </CardHeader>
-      <CardContent className="flex">
+      <CardContent className="font-bold">
         ${(menuItem.price / 100).toFixed(2)}
       </CardContent>
     </Card>

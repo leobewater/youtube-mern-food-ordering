@@ -4,7 +4,6 @@ import {
   FormField,
   FormItem,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
 import { MenuItemInput } from "@/forms/manage-restaurant-form/MenuItemInput";
 import { useFieldArray, useFormContext } from "react-hook-form";
 

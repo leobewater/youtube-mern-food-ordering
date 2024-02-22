@@ -1,10 +1,11 @@
+import { Navigate, Route, Routes } from "react-router-dom";
 import { ProtectedRoute } from "@/auth/ProtectedRoute";
 import { Layout } from "@/layouts/Layout";
 import { AuthCallbackPage } from "@/pages/AuthCallbackPage";
 import { HomePage } from "@/pages/Homepage";
 import { ManageRestaurantPage } from "@/pages/ManageRestaurantPage";
+import SearchPage from "@/pages/SearchPage";
 import { UserProfilePage } from "@/pages/UserProfilePage";
-import { Navigate, Route, Routes } from "react-router-dom";
 
 const AppRoutes = () => {
   return (
@@ -17,8 +18,15 @@ const AppRoutes = () => {
           </Layout>
         }
       />
-
       <Route path="/auth-callback" element={<AuthCallbackPage />} />
+      <Route
+        path="/search/:city"
+        element={
+          <Layout showHero={false}>
+            <SearchPage />
+          </Layout>
+        }
+      />
 
       <Route element={<ProtectedRoute />}>
         <Route

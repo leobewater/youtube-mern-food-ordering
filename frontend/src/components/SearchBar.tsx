@@ -3,6 +3,7 @@ import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Search } from "lucide-react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -18,15 +19,26 @@ type Props = {
   onSubmit: (formData: SearchForm) => void;
   placeHolder: string;
   onReset?: () => void;
+  searchQuery: string;
 };
 
-export const SearchBar = ({ onSubmit, placeHolder, onReset }: Props) => {
+export const SearchBar = ({
+  onSubmit,
+  placeHolder,
+  onReset,
+  searchQuery,
+}: Props) => {
   const form = useForm<SearchForm>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      searchQuery: "",
+      searchQuery,
     },
   });
+
+  // Persist the search query
+  useEffect(() => {
+    form.reset({ searchQuery });
+  }, [form, searchQuery]);
 
   const handleReset = () => {
     form.reset({
@@ -66,16 +78,16 @@ export const SearchBar = ({ onSubmit, placeHolder, onReset }: Props) => {
             </FormItem>
           )}
         />
-        {form.formState.isDirty && (
+        {/* {form.formState.isDirty && ( */}
           <Button
             onClick={handleReset}
             type="button"
             variant="outline"
             className="rounded-full"
           >
-            Clear
+            Reset
           </Button>
-        )}
+        {/* )} */}
         <Button type="submit" className="rounded-full bg-orange-500">
           Search
         </Button>

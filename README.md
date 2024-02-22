@@ -49,6 +49,9 @@ Video: https://www.youtube.com/watch?v=ardeKHEN1j4&t=3450s&ab_channel=ChrisBlake
 # Frontend To Run
 ```bash
 > npm run dev
+
+## test typescript
+> npx tsc
 ```
 
 # Deploy to Render.com

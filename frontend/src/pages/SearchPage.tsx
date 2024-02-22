@@ -82,11 +82,13 @@ export default function SearchPage() {
         {results?.data.map((restaurant) => (
           <SearchResultCard key={restaurant._id} restaurant={restaurant} />
         ))}
-        <PaginationSelector
-          page={results.pagination.page}
-          pages={results.pagination.pages}
-          onPageChange={setPage}
-        />
+        {results.pagination.pages > 1 && (
+          <PaginationSelector
+            page={results.pagination.page}
+            pages={results.pagination.pages}
+            onPageChange={setPage}
+          />
+        )}
       </div>
     </div>
   );

@@ -39,7 +39,7 @@ export const DetailsSection = () => {
           control={control}
           name="city"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="flex-1">
               <FormLabel>City</FormLabel>
               <FormControl>
                 <Input {...field} className="bg-white" />
@@ -52,7 +52,7 @@ export const DetailsSection = () => {
           control={control}
           name="country"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="flex-1">
               <FormLabel>Country</FormLabel>
               <FormControl>
                 <Input {...field} className="bg-white" />
@@ -67,7 +67,7 @@ export const DetailsSection = () => {
         control={control}
         name="deliveryPrice"
         render={({ field }) => (
-          <FormItem className="max-w-[25%]">
+          <FormItem className="md:max-w-[25%]">
             <FormLabel>Delivery Price ($)</FormLabel>
             <FormControl>
               <Input {...field} className="bg-white" placeholder="1.50" />
@@ -81,7 +81,7 @@ export const DetailsSection = () => {
         control={control}
         name="estimatedDeliveryTime"
         render={({ field }) => (
-          <FormItem className="max-w-[25%]">
+          <FormItem className="md:max-w-[25%]">
             <FormLabel>Estimated Delivery Time (minutes)</FormLabel>
             <FormControl>
               <Input {...field} className="bg-white" placeholder="30" />

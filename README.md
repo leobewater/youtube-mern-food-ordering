@@ -38,6 +38,7 @@ Video: https://www.youtube.com/watch?v=ardeKHEN1j4&t=3450s&ab_channel=ChrisBlake
 > npx shadcn-ui@latest add checkbox
 > npx shadcn-ui@latest add aspect-ratio
 > npx shadcn-ui@latest add pagination
+> npx shadcn-ui@latest add card
 
 > npm i react-router-dom
 > npm i lucide-react

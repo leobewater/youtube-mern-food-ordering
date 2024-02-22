@@ -22,9 +22,14 @@ export const PaginationSelector = ({ page, pages, onPageChange }: Props) => {
   return (
     <Pagination>
       <PaginationContent>
-        <PaginationItem>
-          <PaginationPrevious href="#" onClick={() => onPageChange(page - 1)} />
-        </PaginationItem>
+        {page !== 1 && (
+          <PaginationItem>
+            <PaginationPrevious
+              href="#"
+              onClick={() => onPageChange(page - 1)}
+            />
+          </PaginationItem>
+        )}
         {pageNumbers.map((number) => (
           <PaginationItem>
             <PaginationLink

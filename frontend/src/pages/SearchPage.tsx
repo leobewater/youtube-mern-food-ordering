@@ -45,7 +45,7 @@ export default function SearchPage() {
         <SearchBar
           searchQuery={searchState.searchQuery}
           onSubmit={setSearchQuery}
-          placeHolder="Search by Cuisine or Restaurant Name"
+          placeHolder={`Search by Cuisine or Restaurant in ${city}`}
           onReset={resetSearch}
         />
         <SearchResultInfo total={results.pagination.total} city={city} />

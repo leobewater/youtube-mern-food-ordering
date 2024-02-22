@@ -56,4 +56,7 @@ https://youtube-mern-food-ordering-frontend.onrender.com
 ```bash
 - Backend - add render.com IP to mongodb atlas
 - Frontend - add render.com domain name to Auth0 allowed callback URLs
+- Download sample restaurant data:
+https://github.com/chrisblakely01/mern-food-ordering-app-course-resources/blob/main/restaurants_data.json
 ```
+

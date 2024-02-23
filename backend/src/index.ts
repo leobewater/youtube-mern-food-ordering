@@ -6,7 +6,7 @@ import myUserRoute from "./routes/MyUserRoute";
 import myRestaurantRoute from "./routes/MyRestaurantRoute";
 import restaurantRoute from "./routes/RestaurantRoute";
 import { v2 as cloudinary } from "cloudinary";
-import orderRoute from './routes/OrderRoute'
+import orderRoute from "./routes/OrderRoute";
 
 mongoose
   .connect(process.env.MONGODB_CONNECTION_STRING as string)
@@ -21,6 +21,9 @@ cloudinary.config({
 const app = express();
 app.use(express.json());
 app.use(cors());
+
+// allow webhook using raw data
+app.use("/api/order/checkout/webhook", express.raw({ type: "*/*" }));
 
 app.get("/health", async (req: Request, res: Response) => {
   res.send({ message: "health OK!" });

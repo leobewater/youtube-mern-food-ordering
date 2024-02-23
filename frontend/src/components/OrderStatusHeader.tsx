@@ -21,17 +21,17 @@ export const OrderStatusHeader = ({ order }: Props) => {
     return `${hours}:${paddedMinutes}`;
   };
 
-  const getOrderInfo = () => {
+  const getOrderStatusInfo = () => {
     return ORDER_STATUS.find((o) => o.value === order.status) || ORDER_STATUS[0];
   };
 
   return (
     <>
       <h1 className="text-4xl font-bold tracking-tighter flex flex-col gap-5 md:flex-row md:justify-between">
-        <span className="">Order Status: {getOrderInfo().label}</span>
+        <span className="">Order Status: {getOrderStatusInfo().label}</span>
         <span>Expected by: {getExpectedDelivery()}</span>
       </h1>
-      <Progress className="animate-pulse" value={getOrderInfo().progressValue} />
+      <Progress className="animate-pulse" value={getOrderStatusInfo().progressValue} />
     </>
   );
 };

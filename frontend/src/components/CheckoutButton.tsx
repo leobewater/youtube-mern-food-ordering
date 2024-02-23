@@ -12,9 +12,10 @@ import { useLocation } from "react-router-dom";
 type Props = {
   onCheckout: (userFormData: UserFormData) => void;
   disabled: boolean;
+  isLoading: boolean;
 };
 
-export const CheckoutButton = ({ onCheckout, disabled }: Props) => {
+export const CheckoutButton = ({ onCheckout, disabled, isLoading }: Props) => {
   const {
     isAuthenticated,
     isLoading: isAuthLoading,
@@ -41,7 +42,7 @@ export const CheckoutButton = ({ onCheckout, disabled }: Props) => {
     );
   }
 
-  if (isAuthLoading || !currentUser) {
+  if (isAuthLoading || !currentUser || isLoading) {
     return <LoadingButton />;
   }
 

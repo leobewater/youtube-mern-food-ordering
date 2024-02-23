@@ -13,6 +13,7 @@ Video: https://www.youtube.com/watch?v=ardeKHEN1j4&t=3450s&ab_channel=ChrisBlake
 > npm i cloudinary
 > npm i multer
 > npm i @types/multer
+> npm i stripe
 ```
 
 # Backend To Run

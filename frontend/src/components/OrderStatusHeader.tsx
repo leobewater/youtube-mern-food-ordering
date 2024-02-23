@@ -1,3 +1,4 @@
+import { Progress } from "@/components/ui/progress";
 import { Order } from "@/types";
 
 type Props = {
@@ -25,6 +26,7 @@ export const OrderStatusHeader = ({ order }: Props) => {
         <span className="">Order Status: {order.status}</span>
         <span>Expected by: {getExpectedDelivery()}</span>
       </h1>
+      <Progress className="animate-pulse" value={50} />
     </>
   );
 };

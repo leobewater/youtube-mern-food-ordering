@@ -50,6 +50,7 @@ Video: https://www.youtube.com/watch?v=ardeKHEN1j4&t=3450s&ab_channel=ChrisBlake
 > npx shadcn-ui@latest add card
 > npx shadcn-ui@latest add badge
 > npx shadcn-ui@latest add dialog
+> npx shadcn-ui@latest add progress
 
 > npm i react-router-dom
 > npm i lucide-react

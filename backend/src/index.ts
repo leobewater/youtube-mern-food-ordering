@@ -19,11 +19,13 @@ cloudinary.config({
 });
 
 const app = express();
-app.use(express.json());
 app.use(cors());
 
 // allow webhook using raw data
 app.use("/api/order/checkout/webhook", express.raw({ type: "*/*" }));
+
+// all the rest of the routes use json
+app.use(express.json());
 
 app.get("/health", async (req: Request, res: Response) => {
   res.send({ message: "health OK!" });

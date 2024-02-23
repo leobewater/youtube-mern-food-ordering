@@ -12,7 +12,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { ORDER_STATUS } from "@/config/order-status-config";
 import { Order, OrderStatus } from "@/types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type Props = {
   order: Order;
@@ -21,6 +21,10 @@ type Props = {
 export const OrderItemCard = ({ order }: Props) => {
   const { updateRestaurantStatus, isLoading } = useUpdateMyRestaurantOrder();
   const [status, setStatus] = useState<OrderStatus>(order.status);
+
+  useEffect(() => {
+    setStatus(order.status);
+  }, [order.status]);
 
   const handleStatusChange = async (newStatus: OrderStatus) => {
     updateRestaurantStatus({ orderId: order._id as string, status: newStatus });

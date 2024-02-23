@@ -14,14 +14,19 @@ Video: https://www.youtube.com/watch?v=ardeKHEN1j4&t=3450s&ab_channel=ChrisBlake
 > npm i multer
 > npm i @types/multer
 > npm i stripe
+> npm i concurrently
 ```
 
 # Backend To Run
 ```bash
 > cd backend
 > npm run dev
+
+# Open Another Terminal
 > stripe login
 > stripe listen --forward-to localhost:7000/api/order/checkout/webhook
+# similar completed checkout by running in another terminal
+> stripe trigger checkout.session.completed
 ```
 
 # Frontend

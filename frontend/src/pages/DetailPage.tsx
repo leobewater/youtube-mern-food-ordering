@@ -20,7 +20,11 @@ export const DetailPage = () => {
   const { restaurantId } = useParams();
   const { restaurant, isLoading } = useGetRestaurant(restaurantId);
 
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
+    // get cart items from session storage
+    const storedCartItems = sessionStorage.getItem(`cartItems-${restaurantId}`);
+    return storedCartItems ? JSON.parse(storedCartItems) : [];
+  });
 
   const addToCart = (menuItem: MenuItemType) => {
     setCartItems((prevCartItems) => {
@@ -63,7 +67,17 @@ export const DetailPage = () => {
 
   const removeFromCart = (cartItem: CartItem) => {
     setCartItems((prevCartItems) => {
-      return prevCartItems.filter((item) => item._id !== cartItem._id);
+      const updatedCartItems = prevCartItems.filter(
+        (item) => item._id !== cartItem._id
+      );
+
+      // save cart to session storage
+      sessionStorage.setItem(
+        `cartItems-${restaurantId}`,
+        JSON.stringify(updatedCartItems)
+      );
+
+      return updatedCartItems;
     });
   };
 

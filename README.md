@@ -18,7 +18,10 @@ Video: https://www.youtube.com/watch?v=ardeKHEN1j4&t=3450s&ab_channel=ChrisBlake
 
 # Backend To Run
 ```bash
+> cd backend
 > npm run dev
+> stripe login
+> stripe listen --forward-to localhost:7000/api/order/checkout/webhook
 ```
 
 # Frontend
@@ -52,6 +55,7 @@ Video: https://www.youtube.com/watch?v=ardeKHEN1j4&t=3450s&ab_channel=ChrisBlake
 
 # Frontend To Run
 ```bash
+> cd frontend
 > npm run dev
 
 ## test typescript

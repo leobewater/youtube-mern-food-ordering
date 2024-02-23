@@ -28,7 +28,8 @@ export const useGetMyOrders = () => {
     "fetchMyOrders",
     getMyOrdersRequest,
     {
-      refetchInterval: 5000,
+      // every 5s it fetches again automatically
+      refetchInterval: 5000, 
     }
   );
 

@@ -51,6 +51,12 @@ export const DetailPage = () => {
         ];
       }
 
+      // save cart to session storage
+      sessionStorage.setItem(
+        `cartItems-${restaurantId}`,
+        JSON.stringify(updatedCartItems)
+      );
+
       return updatedCartItems;
     });
   };

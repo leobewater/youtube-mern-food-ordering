@@ -1,6 +1,7 @@
 import { useGetMyOrders } from "@/api/OrderApi";
 import { OrderStatusDetail } from "@/components/OrderStatusDetail";
 import { OrderStatusHeader } from "@/components/OrderStatusHeader";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 export const OrderStatusPage = () => {
   const { orders, isLoading } = useGetMyOrders();
@@ -20,6 +21,12 @@ export const OrderStatusPage = () => {
           <OrderStatusHeader order={order} />
           <div className="grid gap-10 md:grid-cols-2">
             <OrderStatusDetail order={order} />
+            <AspectRatio ratio={16 / 5}>
+              <img
+                src={order.restaurant.imageUrl}
+                className="rounded-md object-cover h-full w-full border"
+              />
+            </AspectRatio>
           </div>
         </div>
       ))}

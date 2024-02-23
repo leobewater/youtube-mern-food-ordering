@@ -9,23 +9,29 @@ type Props = {
   restaurant: Restaurant;
   cartItems: CartItem[];
   removeFromCart: (cartItem: CartItem) => void;
-  cartTotal: number;
 };
 
 export const OrderSummary = ({
   restaurant,
   cartItems,
   removeFromCart,
-  cartTotal
 }: Props) => {
-  
+  const getTotalCost = () => {
+    const totalInPence = cartItems.reduce(
+      (total, cartItem) => total + cartItem.price * cartItem.quantity,
+      0
+    );
+    const totalWithDelivery = totalInPence + restaurant.deliveryPrice;
+
+    return (totalWithDelivery / 100).toFixed(2);
+  };
 
   return (
     <>
       <CardHeader>
         <CardTitle className="text-2xl font-bold tracking-tight flex justify-between">
           <span>Your Order</span>
-          <span>${cartTotal.toString()}</span>
+          <span>${getTotalCost()}</span>
         </CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col gap-5">

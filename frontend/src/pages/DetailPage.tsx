@@ -6,8 +6,8 @@ import { RestaurantInfo } from "@/components/RestaurantInfo";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Card, CardFooter } from "@/components/ui/card";
 import { UserFormData } from "@/forms/user-profile-form/UserProfileForm";
-import { MenuItem as MenuItemType, Restaurant } from "@/types";
-import { useEffect, useState } from "react";
+import { MenuItem as MenuItemType } from "@/types";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 export type CartItem = {
@@ -26,14 +26,6 @@ export const DetailPage = () => {
     const storedCartItems = sessionStorage.getItem(`cartItems-${restaurantId}`);
     return storedCartItems ? JSON.parse(storedCartItems) : [];
   });
-
-  const [cartTotal, setCartTotal] = useState<number>(0);
-
-  useEffect(() => {
-    if (restaurant) {
-      setCartTotal(getTotalCost(cartItems, restaurant));
-    }
-  }, [cartItems, restaurant]);
 
   if (isLoading || !restaurant) {
     return "Loading...";
@@ -74,8 +66,6 @@ export const DetailPage = () => {
         JSON.stringify(updatedCartItems)
       );
 
-      setCartItems(updatedCartItems);
-
       return updatedCartItems;
     });
   };
@@ -92,19 +82,8 @@ export const DetailPage = () => {
         JSON.stringify(updatedCartItems)
       );
 
-      setCartItems(updatedCartItems);
       return updatedCartItems;
     });
-  };
-
-  const getTotalCost = (cartItems: CartItem[], restaurant: Restaurant) => {
-    const totalInPence = cartItems.reduce(
-      (total, cartItem) => total + cartItem.price * cartItem.quantity,
-      0
-    );
-    const totalWithDelivery = totalInPence + restaurant.deliveryPrice;
-
-    return parseFloat((totalWithDelivery / 100).toFixed(2));
   };
 
   const onCheckout = (userFormData: UserFormData) => {
@@ -139,7 +118,6 @@ export const DetailPage = () => {
               restaurant={restaurant}
               cartItems={cartItems}
               removeFromCart={removeFromCart}
-              cartTotal={cartTotal}
             />
             <CardFooter>
               <CheckoutButton

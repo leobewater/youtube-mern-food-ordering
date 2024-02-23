@@ -1,4 +1,15 @@
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Separator } from "@/components/ui/separator";
+import { ORDER_STATUS } from "@/config/order-status-config";
 import { Order } from "@/types";
 
 type Props = {
@@ -43,7 +54,35 @@ export const OrderItemCard = ({ order }: Props) => {
             </span>
           </div>
         </CardTitle>
+        <Separator />
       </CardHeader>
+      <CardContent className="flex flex-col gap-6">
+        <div className="flex flex-col gap-2">
+          {order.cartItems.map((cartItem) => (
+            <span key={cartItem.menuItemId}>
+              <Badge variant="outline" className="mr-2">
+                {cartItem.quantity}
+              </Badge>
+              {cartItem.name}
+            </span>
+          ))}
+        </div>
+        <div className="flex flex-col space-y-1.5">
+          <Label htmlFor="status">What's the status of this order?</Label>
+          <Select>
+            <SelectTrigger id="status">
+              <SelectValue placeholder="Status" />
+            </SelectTrigger>
+            <SelectContent position="popper">
+              {ORDER_STATUS.map((status) => (
+                <SelectItem key={status.value} value={status.value}>
+                  {status.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+      </CardContent>
     </Card>
   );
 };

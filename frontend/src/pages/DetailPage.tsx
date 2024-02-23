@@ -1,12 +1,24 @@
 import { useGetRestaurant } from "@/api/RestaurantApi";
 import { MenuItem } from "@/components/MenuItem";
+import { OrderSummary } from "@/components/OrderSummary";
 import { RestaurantInfo } from "@/components/RestaurantInfo";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Card } from "@/components/ui/card";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
+
+export type CartItem = {
+  _id: string;
+  name: string;
+  price: number;
+  quantity: number;
+};
 
 export const DetailPage = () => {
   const { restaurantId } = useParams();
   const { restaurant, isLoading } = useGetRestaurant(restaurantId);
+
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   if (isLoading || !restaurant) {
     return "Loading...";
@@ -28,6 +40,12 @@ export const DetailPage = () => {
           {restaurant.menuItems.map((menuItem) => (
             <MenuItem menuItem={menuItem} />
           ))}
+        </div>
+
+        <div>
+          <Card>
+            <OrderSummary restaurant={restaurant} cartItems={cartItems} />
+          </Card>
         </div>
       </div>
     </div>

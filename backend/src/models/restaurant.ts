@@ -1,9 +1,11 @@
-import mongoose from "mongoose";
+import mongoose, { InferSchemaType } from "mongoose";
 
 const menuItemSchema = new mongoose.Schema({
+  _id: { type: mongoose.Schema.Types.ObjectId, required: true },
   name: { type: String, required: true },
   price: { type: Number, required: true },
 });
+export type MenuItemType = InferSchemaType<typeof menuItemSchema>;
 
 const restuarantSchema = new mongoose.Schema({
   // user document reference
